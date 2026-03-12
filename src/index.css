@@ -16,12 +16,64 @@ body {
 
 /* Custom scrolling animation */
 @keyframes scrollText {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .scrolling-text {
   display: inline-block;
   white-space: nowrap;
   animation: scrollText 15s linear infinite;
+}
+
+/* ── Smooth transition on everything ── */
+*,
+*::before,
+*::after {
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+/* ══════════════════════
+   LIGHT MODE ONLY
+   (dark mode = your existing design, no changes needed)
+══════════════════════ */
+html:not(.dark) body {
+  background-color: #f0fdf4;
+  color: #0f172a;
+}
+
+html:not(.dark) section,
+html:not(.dark) main,
+html:not(.dark) footer,
+html:not(.dark) header {
+  background-color: #f0fdf4 !important;
+}
+
+html:not(.dark) h1,
+html:not(.dark) h2,
+html:not(.dark) h3 {
+  color: #0f172a !important;
+}
+
+html:not(.dark) p {
+  color: #334155 !important;
+}
+
+html:not(.dark) .text-white {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .text-gray-400,
+html:not(.dark) .text-gray-500 {
+  color: #64748b !important;
+}
+
+html:not(.dark) .text-gray-200,
+html:not(.dark) .text-gray-300 {
+  color: #1e293b !important;
 }
